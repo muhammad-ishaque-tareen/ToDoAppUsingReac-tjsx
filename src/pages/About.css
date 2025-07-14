@@ -2,6 +2,7 @@
 .about-container {
   min-height: 100vh;
   padding: 80px 30px;
+  width: 106%;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -32,6 +32,7 @@ export default function Login() {
   return (
     <div className="login-container">
       <form className="login-form-container" onSubmit={handleLogin}>
+        <h2>Login</h2>
         <input
           type="text"
           value={username}
