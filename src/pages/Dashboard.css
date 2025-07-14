@@ -1,4 +1,4 @@
-/* Entire Page Layout */
+
 .dashboard-wrapper {
   position: relative;
   min-height: 150vh;
@@ -9,7 +9,6 @@
   align-items: center;
 }
 
-/* Logout Button */
 .logout-btn {
   position: absolute;
   top: 20px;
@@ -29,7 +28,6 @@
   color: black;
 }
 
-/* User Information */
 .user-info {
   margin-bottom: 25px;
   text-align: center;
@@ -48,7 +46,7 @@
   color: #dddddd;
 }
 
-/* Form Section */
+
 .dashboard-form {
   background-color: white;
   padding: 30px;
@@ -60,9 +58,8 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  position: relative; /* for absolute positioning of button */
+  position: relative; 
 }
-
 .dashboard-form input {
   padding: 10px 14px;
   font-size: 16px;
@@ -71,7 +68,7 @@
   outline: none;
 }
 
-/* Submit Button at Bottom Right */
+
 .dashboard-form button[type="submit"] {
   position: absolute;
   right: 30px;
@@ -95,7 +92,6 @@
   
 }
 
-/* Todo Section Container */
 .todo-list-container {
   background-color: white;
   padding: 25px;
@@ -112,7 +108,7 @@
   color: #222;
 }
 
-/* Scrollable List with only 2 todos visible at once */
+
 .scrollable-todo-list {
   max-height: 180px;
   overflow-y: auto;
@@ -122,7 +118,6 @@
   padding-right: 5px;
 }
 
-/* Scrollbar Style */
 .scrollable-todo-list::-webkit-scrollbar {
   width: 4px;
 
@@ -137,7 +132,7 @@
   background-color: #f0f0f0;
 }
 
-/* Todo Cards */
+
 .todo-card {
   background-color: white;
   padding: 15px;
@@ -159,7 +154,7 @@
   color: #333;
 }
 
-/* Details inside expanded todo */
+
 .todo-details {
   margin-top: 10px;
   font-size: 0.95rem;
@@ -167,7 +162,6 @@
   line-height: 1.5;
 }
 
-/* Edit/Delete Buttons */
 .todo-actions {
   margin-top: 10px;
   display: flex;
@@ -202,19 +196,18 @@
   background-color: #e84118;
 }
 
-/* No Todo Placeholder */
+
 .no-todo {
   color: #888;
   margin-top: 20px;
 }
 
-/* Title Style */
 .todo-title {
   color: #000000;
   text-align: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-/* Bottom-left Search Button */
+
 .dashboard-form .search-btn {
   position: absolute;
   left: 30px;

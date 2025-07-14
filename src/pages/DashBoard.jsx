@@ -16,7 +16,7 @@ export default function Dashboard() {
   const [expandedTodoId, setExpandedTodoId] = useState(null);
   const [isSearching, setIsSearching] = useState(false);
 
-  // Load todos on mount
+
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem("userTodos")) || {};
     if (loggedUser && storedTodos[loggedUser.username]) {
@@ -26,14 +26,14 @@ export default function Dashboard() {
     }
   }, [loggedUser]);
 
-  // Save to localStorage
+  
   const saveToStorage = (newTodos) => {
     const stored = JSON.parse(localStorage.getItem("userTodos")) || {};
     stored[loggedUser.username] = newTodos;
     localStorage.setItem("userTodos", JSON.stringify(stored));
   };
 
-  // Submit (add/update)
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newTodo = {
@@ -52,7 +52,7 @@ export default function Dashboard() {
     setFilteredTodos(updatedTodos);
     saveToStorage(updatedTodos);
 
-    // Reset form
+    
     setTitle("");
     setDescription("");
     setEndDate("");
@@ -61,7 +61,6 @@ export default function Dashboard() {
     setIsSearching(false);
   };
 
-  // Edit existing todo
   const handleEdit = (id) => {
     const selected = todos.find((todo) => todo.id === id);
     if (selected) {
@@ -73,7 +72,7 @@ export default function Dashboard() {
     }
   };
 
-  // Delete todo
+ 
   const handleDelete = (id) => {
     const updated = todos.filter((todo) => todo.id !== id);
     setTodos(updated);
@@ -81,18 +80,17 @@ export default function Dashboard() {
     saveToStorage(updated);
   };
 
-  // Logout
+ 
   const handleLogout = () => {
     localStorage.removeItem("LoggedInUser");
     navigate("/");
   };
 
-  // Expand/Collapse details
+  
   const toggleTodoDetails = (id) => {
     setExpandedTodoId(expandedTodoId === id ? null : id);
   };
 
-  // Search handler
   const handleSearch = (e) => {
     e.preventDefault();
     const query = title.trim().toLowerCase();
@@ -105,7 +103,7 @@ export default function Dashboard() {
     setIsSearching(true);
   };
 
-  // Clear search
+
   const handleClearSearch = () => {
     setFilteredTodos(todos);
     setIsSearching(false);

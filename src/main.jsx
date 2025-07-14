@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import About from './pages/About';
 import TermsAndConditions from './pages/TermsAndConditions';
 import DashBoard from './pages/DashBoard';
+import Forgetpassword from './pages/Forgetpassword';
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -24,6 +25,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/dashboard" element={<DashBoard />} />
         <Route path="/search/:term" element={<SearchResults />} />
         <Route path="/terms-condition" element={<TermsAndConditions />} />
+        <Route path="forgetpassword" element={<Forgetpassword />}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

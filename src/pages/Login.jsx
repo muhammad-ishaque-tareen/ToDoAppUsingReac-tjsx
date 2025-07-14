@@ -57,7 +57,7 @@ export default function Login() {
           <button
             type="button"
             className="right-btn"
-            onClick={() => navigate("/forgot")}
+            onClick={() => navigate("/forgetpassword")}
           >
             Forgot Password
           </button>
