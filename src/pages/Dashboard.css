@@ -1,137 +1,262 @@
-/* Overall layout */
+/* Entire Page Layout */
 .dashboard-wrapper {
   position: relative;
-  min-height: 100vh;
-  background-color: #f1f2f6;
-  padding-top: 60px;
+  min-height: 150vh;
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Logout button */
+/* Logout Button */
 .logout-btn {
   position: absolute;
   top: 20px;
   right: 30px;
- background: linear-gradient(to right, #00ffb3, #00c29e);
+  background: linear-gradient(to right, #00ffb3, #00c29e);
   color: white;
   padding: 8px 20px;
   border: none;
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
+  transition: 0.3s ease;
 }
+
 .logout-btn:hover {
   background: linear-gradient(to right, #c20300, #bb00ff);
   color: black;
 }
 
-
-
-/* Main box */
-.dashboard-container {
-  background-color: white;
-  padding: 40px;
-  border-radius: 10px;
-  margin: 0 auto;
-  max-width: 550px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-   
-}
-
-/* Header */
-.dashboard-container h2 {
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-/* Input rows (one per line) */
-.input-row {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-.input-row input {
-  flex: 1;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-/* Buttons */
-.btn {
-  padding: 10px 18px;
-  font-size: 15px;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn.green {
-  background: linear-gradient(to right, #00ffb3, #00c29e);
-  color: white;
-}
-.btn.green:hover {
-  background: linear-gradient(to right, #00c29e, #00ffb3);
-  transform: translateY(-2px);
-   color: red;
-   font-style: italic;
-  font: bold;
-  box-shadow: 0px 6px 15px rgba(0, 255, 179, 0.4);
-}
-
-
-
-/* Todo display section */
-.todo-box {
-  margin-top: 30px;
-}
-
-.todo-box h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.todo-list {
-  max-height: 180px;
-  overflow-y: auto;
-  padding-right: 5px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: s#f9f9f9;
-  padding: 10px;
-}
-
-.todo-item {
-  background-color: #e6faff;
-  padding: 12px;
-  border-radius: 6px;
-  margin-bottom: 10px;
-  color: #333;
-  border: 1px solid #bfefff;
-}
-
-.no-todo {
-  text-align: center;
-  color: #888;
-}
+/* User Information */
 .user-info {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   text-align: center;
+  color: white;
 }
 
 .user-info h2 {
   margin: 0;
   font-size: 1.8rem;
-  color: #222;
+  color: #ffffff;
 }
 
 .user-info p {
   margin: 5px 0;
   font-size: 1rem;
-  color: #555;
+  color: #dddddd;
+}
+
+/* Form Section */
+.dashboard-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative; /* for absolute positioning of button */
+}
+
+.dashboard-form input {
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+/* Submit Button at Bottom Right */
+.dashboard-form button[type="submit"] {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+ background: linear-gradient(to right, #203a43, #2c5364);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.dashboard-form button[type="submit"]:hover {
+  background: linear-gradient(to right, #203a43, #2c5364);
+  color: #ffde59;
+  transform: translateY(-2px);
+  font-weight: bold;
+  
+}
+
+/* Todo Section Container */
+.todo-list-container {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.todo-list-container h3 {
+  margin-bottom: 15px;
+  font-size: 30px;
+  color: #222;
+}
+
+/* Scrollable List with only 2 todos visible at once */
+.scrollable-todo-list {
+  max-height: 180px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 5px;
+}
+
+/* Scrollbar Style */
+.scrollable-todo-list::-webkit-scrollbar {
+  width: 4px;
+
+}
+
+.scrollable-todo-list::-webkit-scrollbar-thumb {
+  background-color: rgb(138, 133, 133);
+  border-radius: 2px;
+}
+
+.scrollable-todo-list::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}
+
+/* Todo Cards */
+.todo-card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 10px 2px 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+  cursor: pointer;
+  border-left: 6px solid white;
+}
+
+.todo-card:hover {
+  background-color: #d2f9ff;
+}
+
+.todo-card h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Details inside expanded todo */
+.todo-details {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Edit/Delete Buttons */
+.todo-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.todo-actions button {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+  font-weight: bold;
+}
+
+.todo-actions button.edit-btn {
+  background-color: #ffa502;
+  color: white;
+}
+
+.todo-actions button.edit-btn:hover {
+  background-color: #e07b00;
+}
+
+.todo-actions button.delete-btn {
+  background-color: #ff4757;
+  color: white;
+}
+
+.todo-actions button.delete-btn:hover {
+  background-color: #e84118;
+}
+
+/* No Todo Placeholder */
+.no-todo {
+  color: #888;
+  margin-top: 20px;
+}
+
+/* Title Style */
+.todo-title {
+  color: #000000;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/* Bottom-left Search Button */
+.dashboard-form .search-btn {
+  position: absolute;
+  left: 30px;
+  bottom: 20px;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: linear-gradient(to right, #203a43, #2c5364);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.dashboard-form .search-btn:hover {
+  background: linear-gradient(to right, #2c5364, #203a43);
+  color: #ffde59;
+  transform: translateY(-2px);
+}
+.search-btn,
+.clear-btn {
+  margin-right: 10px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  background: #007bff;
+  transition: background 0.3s ease;
+}
+
+.search-btn:hover {
+  background: #0056b3;
+}
+
+.clear-btn {
+  background: #6c757d;
+}
+
+.clear-btn:hover {
+  background: #5a6268;
 }
