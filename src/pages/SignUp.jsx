@@ -28,21 +28,25 @@ export default function SignUp() {
         value={firstname}
         placeholder='Enter Your First Name'
         onChange={(e)=>e.setFirstname(e.target.value)}
+        required
         />
         <input type="text" 
         value={secondname}
         placeholder='Enter Your Second Name'
         onChange={(e)=>e.setSecondname(e.target.value)}
+        required
         />
         <input type="text" 
         value={username}
         placeholder='Enter Your user Name without white spaces'
         onChange={(e)=>e.setUsername(e.target.value)}
+        required
         />
         <input type="email" 
         value={email}
         placeholder='Enter a valid Email'
         onChange={handleEmail}
+        required
         />
 
       </form>

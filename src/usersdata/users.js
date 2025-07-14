@@ -6,6 +6,13 @@ const users=[{
     password: "Afn@n1234",
     
 },{
+    firstname: "Amjad",
+    secondname: "Khan Tareen",
+    username : "amjadkhan",
+    email: "amjadkhantareen@gmail.com",
+    password: "Amj@d1234",
+    
+},{
      firstname: "Muhammad",
     secondname: "Rizwan",
     username: "rizwan",
